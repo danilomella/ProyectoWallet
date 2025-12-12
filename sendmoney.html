@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alke Wallet - Enviar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="container main-container" style="max-width: 600px;">
+        <h2 class="mb-4">Enviar Dinero</h2>
+        
+        <div class="card p-4 mb-4">
+            <div class="mb-3 position-relative">
+                <label for="searchContact" class="form-label">Buscar contacto:</label>
+                <input type="text" class="form-control" id="searchContact" placeholder="Escribe un nombre...">
+                <div id="suggestions" class="list-group" style="display:none;"></div>
+            </div>
+
+            <button id="btnToggleAdd" class="btn btn-outline-secondary btn-sm mb-3">+ Nuevo contacto</button>
+
+            <div id="newContactForm" class="card card-body bg-light mb-3" style="display:none;">
+                <input type="text" id="newContactName" class="form-control mb-2" placeholder="Nombre">
+                <input type="text" id="newContactCBU" class="form-control mb-2" placeholder="CBU">
+                <div class="text-end">
+                    <button id="btnCancelAdd" class="btn btn-sm btn-secondary me-2">Cancelar</button>
+                    <button id="btnSaveContact" class="btn btn-sm btn-success">Guardar</button>
+                </div>
+            </div>
+
+            <h5 class="mb-3">Mis Contactos</h5>
+            <ul id="contactList" class="list-group mb-3">
+                </ul>
+        </div>
+
+        <div id="sendSection" class="card p-4 bg-light" style="display:none;">
+            <h5 class="text-primary">Enviando a: <span id="selectedContactName"></span></h5>
+            <div class="input-group mb-3 mt-3">
+                <span class="input-group-text">$</span>
+                <input type="number" class="form-control" id="amountToSend" placeholder="Monto">
+            </div>
+            <button id="btnSendMoney" class="btn btn-primary w-100">Confirmar Transferencia</button>
+        </div>
+
+        <div id="sendSuccessMsg" class="alert alert-success mt-3" style="display:none;"></div>
+        <a href="menu.html" class="btn btn-link d-block text-center mt-3">Volver al Menú</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script_sendmoney.js"></script>
+</body>
+</html>
